@@ -1,5 +1,11 @@
 theme: jekyll-theme-minimal
-title                    : "PWeb 2021"
+title: PWeb 2021
+author: Farhan Arifandi
 title_separator          : "|"
-name                     : &name "Farhan Arifandi"
-description              : &description "Repository tugas mata kuliah Pemrograman Web (IF184504) tahun 2021."
+description              : Repository tugas mata kuliah Pemrograman Web (IF184504) tahun 2021.
+
+social-network-links:
+  email: "farhanarifandi@yahoo.com"
+  facebook: farfnd
+  github: farfnd
+  instagram: frhnar
