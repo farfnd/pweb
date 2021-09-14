@@ -1,3 +1,8 @@
+---
+layout: default
+title: PWeb 2021 | Farhan Arifandi
+---
+
 Daftar tugas mata kuliah Pemrograman Web 2021:
 
 - [Tugas 1: Curriculum Vitae](https://farfnd.github.io/)
