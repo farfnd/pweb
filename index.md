@@ -1,6 +1,6 @@
 ---
 layout: default
-title: PWeb 2021 | Farhan Arifandi
+title: PWeb 2021 &#124; Farhan Arifandi
 ---
 
 Daftar tugas mata kuliah Pemrograman Web 2021:
