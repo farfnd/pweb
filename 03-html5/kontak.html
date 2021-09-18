@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+	<title>Kontak - Warung Tegal</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="slider.css">
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<div class="wrapper">
+		<header>
+			<div class="title">
+				<div class="title-container">
+					<h1>Warung Tegal</h1>
+					<hr class="solid">
+					<h2>Warungnya Indonesia</h2>
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="/">beranda</a></li>
+					<li><a href="daftar-makanan.html">daftar masakan</a></li>
+					<li><a href="katering.html">katering</a></li>
+					<li><a href="tentang.html">tentang</a></li>
+					<li><a href="kontak.html" class="current">kontak</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section class="menu">
+			<ul>
+				<p>Hubungi Warung Tegal terdekat di kota Anda</p>
+			</ul>
+		</section>
+		<aside>
+			<section class="popular-recipes">
+				<h2>Masakan Populer</h2>
+				<a href="https://id.wikipedia.org/wiki/Soto_ayam" target="_blank">Sayur Sop</a>
+				<a href="https://id.wikipedia.org/wiki/Sayur_asam" target="_blank">Sayur Asem</a>
+				<a href="https://id.wikipedia.org/wiki/Sayur_lodeh" target="_blank">Sayur Lodeh</a>
+				<a href="https://en.wikipedia.org/wiki/Sayur_bayam" target="_blank">Sayur Bayam</a>
+			</section>
+			<section class="contact-details">
+				<h2>Kontak</h2>
+				<p>Warung Tegal<br>
+					di seluruh indonesia
+				</p>
+			</section>
+		</aside>
+		<footer style="width: 100%; text-align: center;">
+			&copy; 2021 Warung Tegal
+		</footer>
+	</div>
+</body>
+
+<script>
+	var slideIndex = 1;
+	showSlides(slideIndex);
+
+	// Next/previous controls
+	function plusSlides(n) {
+		showSlides(slideIndex += n);
+	}
+
+	// Thumbnail image controls
+	function currentSlide(n) {
+		showSlides(slideIndex = n);
+	}
+
+	function showSlides(n) {
+		var i;
+		var slides = document.getElementsByClassName("mySlides");
+		var dots = document.getElementsByClassName("dot");
+		if (n > slides.length) { slideIndex = 1 }
+		if (n < 1) { slideIndex = slides.length }
+		for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";
+		}
+		for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" active", "");
+		}
+		slides[slideIndex - 1].style.display = "block";
+		dots[slideIndex - 1].className += " active";
+	}
+</script>
+
+</html>

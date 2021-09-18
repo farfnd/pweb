@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+	<title>Home - Warung Tegal</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="slider.css">
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<div class="wrapper">
+		<header>
+			<div class="title">
+				<div class="title-container">
+					<h1>Warung Tegal</h1>
+					<hr class="solid">
+					<h2>Warungnya Indonesia</h2>
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="/" class="current">beranda</a></li>
+					<li><a href="daftar-makanan.html">daftar masakan</a></li>
+					<li><a href="katering.html">katering</a></li>
+					<li><a href="tentang.html">tentang</a></li>
+					<li><a href="kontak.html">kontak</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- Slideshow container -->
+		<div class="slideshow-container">
+
+			<!-- Full-width images with number and caption text -->
+			<div class="mySlides fade">
+				<div class="numbertext">1 / 4</div>
+				<img src="images/warteg.JPG" style="width:100%">
+				<div class="text">Warung Tegal</div>
+			</div>
+
+			<div class="mySlides fade">
+				<div class="numbertext">2 / 4</div>
+				<img src="images/soto.jpg" style="width:100%">
+				<div class="text">Soto Ayam</div>
+			</div>
+
+			<div class="mySlides fade">
+				<div class="numbertext">3 / 4</div>
+				<img src="images/pecel.jpg" style="width:100%">
+				<div class="text">Pecel</div>
+			</div>
+
+			<div class="mySlides fade">
+				<div class="numbertext">4 / 4</div>
+				<img src="images/lodeh.jpg" style="width:100%">
+				<div class="text">Sayur Lodeh</div>
+			</div>
+
+			<!-- Next and previous buttons -->
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+		<br>
+
+		<!-- The dots/circles -->
+		<div style="text-align:center">
+			<span class="dot" onclick="currentSlide(1)"></span>
+			<span class="dot" onclick="currentSlide(2)"></span>
+			<span class="dot" onclick="currentSlide(3)"></span>
+			<span class="dot" onclick="currentSlide(4)"></span>
+		</div>
+		<section class="menu">
+			<article>
+				<figure>
+					<img src="images/soto.jpg" alt="soto">
+					<figcaption>Soto Indonesia</figcaption>
+				</figure>
+				<hgroup>
+					<h2>Soto Ayam</h2>
+					<h3>Makanan Berkuah</h3>
+				</hgroup>
+				<p>Soto ayam adalah makanan khas Indonesia yang berupa sejenis sup ayam dengan kuah yang berwarna
+					kekuningan.</p>
+			</article>
+			<article>
+				<figure>
+					<img src="images/pecel.jpg" alt="pecel">
+					<figcaption>Pecel Indonesia</figcaption>
+				</figure>
+				<hgroup>
+					<h2>Pecel</h2>
+					<h3>Makanan dengan Bumbu Kacang</h3>
+				</hgroup>
+				<p>Pecel adalah makanan yang menggunakan bumbu sambal kacang sebagai bahan utamanya yang dicampur dengan
+					aneka jenis sayuran.</p>
+			</article>
+			<article>
+				<figure>
+					<img src="images/lodeh.jpg" alt="lodeh">
+					<figcaption>Sayur Lodeh</figcaption>
+				</figure>
+				<hgroup>
+					<h2>Sayur Lodeh</h2>
+					<h3>Makanan Berkuah</h3>
+				</hgroup>
+				<p>Sayur lodeh adalah masakan sayur yang berkuah santan khas Indonesia, terutama di daerah Jawa tengah,
+					menggunakan bahan utama labu siam yang kerap dicampur bersama dengan kacang panjang, terung, petai,
+					tempe, cabai, dan jagung kecil.</p>
+			</article>
+		</section>
+		<aside>
+			<section class="popular-recipes">
+				<h2>Masakan Populer</h2>
+				<a href="https://id.wikipedia.org/wiki/Soto_ayam" target="_blank">Sayur Sop</a>
+				<a href="https://id.wikipedia.org/wiki/Sayur_asam" target="_blank">Sayur Asem</a>
+				<a href="https://id.wikipedia.org/wiki/Sayur_lodeh" target="_blank">Sayur Lodeh</a>
+				<a href="https://en.wikipedia.org/wiki/Sayur_bayam" target="_blank">Sayur Bayam</a>
+			</section>
+			<section class="contact-details">
+				<h2>Kontak</h2>
+				<p>Warung Tegal<br>
+					di seluruh indonesia
+				</p>
+			</section>
+		</aside>
+		<footer style="width: 100%; text-align: center;">
+			&copy; 2021 Warung Tegal
+		</footer>
+	</div>
+</body>
+
+<script>
+	var slideIndex = 1;
+	showSlides(slideIndex);
+
+	// Next/previous controls
+	function plusSlides(n) {
+		showSlides(slideIndex += n);
+	}
+
+	// Thumbnail image controls
+	function currentSlide(n) {
+		showSlides(slideIndex = n);
+	}
+
+	function showSlides(n) {
+		var i;
+		var slides = document.getElementsByClassName("mySlides");
+		var dots = document.getElementsByClassName("dot");
+		if (n > slides.length) { slideIndex = 1 }
+		if (n < 1) { slideIndex = slides.length }
+		for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";
+		}
+		for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" active", "");
+		}
+		slides[slideIndex - 1].style.display = "block";
+		dots[slideIndex - 1].className += " active";
+	}
+</script>
+
+</html>
