@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+	<title>Ini Toko Baju</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="slider.css">
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<div class="wrapper">
+		<header>
+			<div class="title">
+				<a href="https://farfnd.github.io/pweb/04-css/">
+					<h1>Ini Toko Baju</h1>
+				</a>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="https://farfnd.github.io/pweb/04-css/" class="current">Home</a></li>
+					<li><a href="#">Products</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- Slideshow container -->
+		<div class="slideshow-container">
+
+			<!-- Full-width images with number and caption text -->
+			<div class="mySlides fade">
+				<img src="https://www.hanakaclassic.com/wp-content/uploads/2020/08/S__13287430.jpg">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="https://www.hanakaclassic.com/wp-content/uploads/2020/08/S__13385748.jpg">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="https://www.hanakaclassic.com/wp-content/uploads/2020/07/12289494020432.jpg"
+					style="width:100%">
+			</div>
+
+			<!-- Next and previous buttons -->
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+		<br>
+
+		<!-- The dots/circles -->
+		<div style="text-align:center">
+			<span class="dot" onclick="currentSlide(1)"></span>
+			<span class="dot" onclick="currentSlide(2)"></span>
+			<span class="dot" onclick="currentSlide(3)"></span>
+		</div>
+
+		<div class="main">
+			<section class="menu">
+				<h2>Most Popular</h2>
+				<article>
+					<table>
+						<tbody>
+							<tr>
+								<td class="image">
+									<img src="https://www.hanakaclassic.com/wp-content/uploads/2021/06/katalog-square-2-1-300x300.jpg"
+										alt="">
+								</td>
+								<td class="description">
+									<a href="#">
+										<h2>Quotes Tee</h2>
+									</a>
+									<p>A comfortable tee with inspirational quotes for your daily activities.</p>
+									<h4>Rp150.000</h4>
+									<a href="#" class="btn">Checkout</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</article>
+				<article>
+					<table>
+						<tbody>
+							<tr>
+								<td class="image">
+									<img src="https://www.hanakaclassic.com/wp-content/uploads/2021/05/leno-square-1-300x300.jpg"
+										alt="">
+								</td>
+								<td class="description">
+									<a href="#">
+										<h2>Leno Army Tee</h2>
+									</a>
+									<p>A comfortable army-colored tee with collars.</p>
+									<h4>Rp200.000</h4>
+									<a href="#" class="btn">Checkout</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</article>
+				<article>
+					<table>
+						<tbody>
+							<tr>
+								<td class="image">
+									<img src="https://www.hanakaclassic.com/wp-content/uploads/2020/10/131-300x300.jpg"
+										alt="">
+								</td>
+								<td class="description">
+									<a href="#">
+										<h2>Corduroy Jacket</h2>
+									</a>
+									<p>A brown corduroy jacket, suitable for any kind of fashion style.</p>
+									<h4>Rp450.000</h4>
+									<a href="#" class="btn">Checkout</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</article>
+				<article>
+					<table>
+						<tbody>
+							<tr>
+								<td class="image">
+									<img src="https://www.hanakaclassic.com/wp-content/uploads/2021/03/LP-square-8-300x300.jpg"
+										alt="">
+								</td>
+								<td class="description">
+									<a href="#">
+										<h2>Baggy Pants Black</h2>
+									</a>
+									<p>A fit straight cut baggy pants, designed for comfort with the best material.</p>
+									<h4>Rp250.000</h4>
+									<a href="#" class="btn">Checkout</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</article>
+			</section>
+			<aside>
+				<section>
+					<h2>Categories</h2>
+					<a href="#">T-Shirt</a>
+					<a href="#">Shirt</a>
+					<a href="#">Jacket</a>
+					<a href="#">Hoodie</a>
+					<a href="#">Trousers</a>
+				</section>
+			</aside>
+		</div>
+		<footer>
+			&copy; 2021 Ini Toko Baju by <a href="https://farfnd.github.io">FA</a>
+		</footer>
+	</div>
+</body>
+
+<script>
+	var slideIndex = 1;
+	showSlides(slideIndex);
+
+	// Next/previous controls
+	function plusSlides(n) {
+		showSlides(slideIndex += n);
+	}
+
+	// Thumbnail image controls
+	function currentSlide(n) {
+		showSlides(slideIndex = n);
+	}
+
+	function showSlides(n) {
+		var i;
+		var slides = document.getElementsByClassName("mySlides");
+		var dots = document.getElementsByClassName("dot");
+		if (n > slides.length) { slideIndex = 1 }
+		if (n < 1) { slideIndex = slides.length }
+		for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";
+		}
+		for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" active", "");
+		}
+		slides[slideIndex - 1].style.display = "block";
+		dots[slideIndex - 1].className += " active";
+	}
+</script>
+
+</html>
