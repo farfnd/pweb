@@ -13,3 +13,5 @@ Daftar tugas mata kuliah Pemrograman Web 2021:
   - [Blog post](https://farfnd.blogspot.com/2021/09/tugas-3-pemrograman-web-web-warung.html)
 - [Tugas 4: Website Katalog](https://farfnd.github.io/pweb/04-css)
   - [Blog post](https://farfnd.blogspot.com/2021/09/tugas-4-pemrograman-web-website-katalog.html)
+- [Tugas 5: Validasi Form dengan Javascript](https://farfnd.github.io/pweb/05-javascript/)
+  - [Blog post](https://farfnd.blogspot.com/2021/10/tugas-5-pemrograman-web-validasi-form.html)
