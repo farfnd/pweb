@@ -14,3 +14,5 @@ Daftar tugas:
   - [Blog post](https://farfnd.blogspot.com/2021/09/tugas-4-pemrograman-web-website-katalog.html)
 - [Tugas 5: Validasi Form dengan Javascript](https://farfnd.github.io/pweb/05-javascript/)
   - [Blog post](https://farfnd.blogspot.com/2021/10/tugas-5-pemrograman-web-validasi-form.html)
+- [Tugas 6: Form Login dan Contact dengan Bootstrap](https://farfnd.github.io/pweb/06-bootstrap/)
+  - [Blog post](https://farfnd.blogspot.com/2021/10/tugas-6-pemrograman-web-form-login-dan.html)
