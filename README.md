@@ -16,3 +16,5 @@ Daftar tugas:
   - [Blog post](https://farfnd.blogspot.com/2021/10/tugas-5-pemrograman-web-validasi-form.html)
 - [Tugas 6: Form Login dan Contact dengan Bootstrap](https://farfnd.github.io/pweb/06-bootstrap/)
   - [Blog post](https://farfnd.blogspot.com/2021/10/tugas-6-pemrograman-web-form-login-dan.html)
+- [ETS: Front-End Web CV](https://farfnd.github.io/pweb/ets/)
+  - [Blog post](https://farfnd.blogspot.com/2021/11/evaluasi-tengah-semester-pemrograman-web.html)
