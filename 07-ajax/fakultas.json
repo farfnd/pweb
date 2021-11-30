@@ -1,0 +1,57 @@
+{
+    "Fakultas Sains dan Analitika Data (SCIENTICS)": [
+        "Fisika",
+        "Kimia",
+        "Biologi",
+        "Matematika",
+        "Statistika",
+        "Aktuaria"
+    ],
+    "Fakultas Teknologi Industri dan Rekayasa Sistem (INDSYS)": [
+        "Teknik Mesin",
+        "Teknik Sistem dan Industri",
+        "Teknik Kimia",
+        "Teknik Material & Metalurgi",
+        "Teknik Fisika",
+        "Teknik Pangan"
+    ],
+    "Fakultas Teknik Sipil Perencanaan dan Kebumian (CIVPLAN)": [
+        "Teknik Sipil",
+        "Perencanaan Wilayah dan Kota",
+        "Arsitektur",
+        "Teknik Geomatika",
+        "Teknik Lingkungan",
+        "Teknik Geofisika"
+    ],
+    "Fakultas Teknologi Kelautan (MARTECH)": [
+        "Teknik Perkapalan",
+        "Teknik Transportasi Laut",
+        "Teknik Sistem Perkapalan",
+        "Teknik Kelautan",
+        "Teknik Lepas Pantai"
+    ],
+    "Fakultas Teknologi Elektro dan Informatika Cerdas (ELECTICS)": [
+        "Teknik Informatika",
+        "Sistem Informasi",
+        "Teknologi Informasi",
+        "Teknik Elektro",
+        "Teknik Komputer",
+        "Teknik Biomedik"
+    ],
+    "Fakultas Desain Kreatif dan Bisnis Digital (CREABIZ)": [
+        "Desain Produk Industri",
+        "Manajemen Bisnis",
+        "Desain Interior",
+        "Desain Komunikasi Visual",
+        "Studi Pembangunan",
+        "Manajemen Teknologi"
+    ],
+    "Fakultas Vokasi (VOCATION)": [
+        "Teknik Infrastruktur Sipil",
+        "Teknik Kimia Industri",
+        "Teknik Mesin Industri",
+        "Teknik Instrumentasi",
+        "Teknik Elektro Otomasi",
+        "Statistika Bisnis"
+    ]
+}
