@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tugas 8.1 JQuery - Daftar Buku & Animasi</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="daftar-buku">
+    <header>
+      <nav class="navbar navbar-expand-md fixed-top navbar-dark" style="background-color: #013880;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://farfnd.github.io">
+              <img src="https://farfnd.github.io/assets/images/FAnewgrey.png" alt="" width="50" class="d-inline-block align-text-middle">
+            </a>
+            <a class="navbar-brand" href=".">
+                Tugas 8 - JQuery
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                  <a class="nav-link active" href=".">Daftar Buku & Animasi</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="form.html">Validasi Form</a>
+                </li>
+              </ul>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    <div class="row mb-4">
+      <div class="col-sm-12">
+        <div class="card p-3">
+          <div class="card-body">
+            <h4 class="card-title text-center pb-3">Daftar Buku</h4>
+            <label for="buku" class="form-label">Tambahkan buku baru</label>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Judul buku" aria-label="Judul buku" aria-describedby="addBuku" name="buku" id="buku">
+              <button class="btn btn-primary" type="button" id="addBuku">Tambah</button>
+            </div>
+
+            <label for="daftar_buku" class="form-label">Daftar buku</label>
+            <select class="form-select" aria-label="Daftar buku" name="daftar_buku" id="daftar_buku">
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mb-3" id="expand-div">
+      <span>Kurang lebar?&nbsp;<button id="expand" type="button" class="btn btn-primary">Perluas</button></span>
+    </div>
+    <div class="text-center mb-3 d-none" id="shrink-div">
+      <span>Terlalu lebar?&nbsp;<button id="shrink" type="button" class="btn btn-primary">Persempit</button></span>
+    </div>
+  </main>
+
+  <footer class="text-muted">
+    <div class="container">
+      <p class="text-dark">
+        &copy; <a href="https://farfnd.github.io" style="text-decoration: none;">FA</a> 2021
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.all.min.js"></script>
+
+  <script>
+    $('#addBuku').click(function (e) { 
+      var judul_buku = $('#buku').val();
+      if(judul_buku.length) {
+        $('#daftar_buku').append(`<option value="${judul_buku}">${judul_buku}</option>`)
+        
+        Swal.fire({
+          icon: 'success',
+          text: 'Buku berhasil ditambahkan!',
+          heightAuto: false
+        });
+      } else{
+        Swal.fire({
+          icon: 'error',
+          text: 'Mohon isi judul buku terlebih dahulu!',
+          heightAuto: false
+        })
+      };
+    });
+
+    $('#expand').click(function (e) { 
+      $('#expand').prop('disabled', true);
+      $('#shrink').prop('disabled', false);
+      $(".daftar-buku").animate({ 
+        maxWidth: "1000px",
+      }, 1000, function () {
+        $('#expand-div').addClass('d-none');
+        $('#shrink-div').removeClass('d-none');
+      });
+    });
+
+    $('#shrink').click(function (e) { 
+      $('#shrink').prop('disabled', true);
+      $('#expand').prop('disabled', false);
+      $(".daftar-buku").animate({ 
+        maxWidth: "500px",
+      }, 1000, function () {
+        $('#shrink-div').addClass('d-none');
+        $('#expand-div').removeClass('d-none');
+      });
+    });
+
+  </script>
+</body>
+</html>
