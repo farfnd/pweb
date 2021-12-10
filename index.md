@@ -21,3 +21,5 @@ Daftar tugas mata kuliah Pemrograman Web 2021:
   - [Blog post](https://farfnd.blogspot.com/2021/11/tugas-7-pemrograman-web-menampilkan.html)
 - [ETS: Front-End Web CV](https://farfnd.github.io/pweb/ets/)
   - [Blog post](https://farfnd.blogspot.com/2021/11/evaluasi-tengah-semester-pemrograman-web.html)
+- [Tugas 9: Website Pendaftaran Siswa Baru dengan PHP dan MySQL](https://pweb-9.000webhostapp.com)
+  - [Blog post](https://farfnd.blogspot.com/2021/12/tugas-9-pemrograman-web-website.html)
