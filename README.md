@@ -24,3 +24,5 @@ Daftar tugas:
   - [Blog post](https://farfnd.blogspot.com/2021/12/tugas-8-pemrograman-web-manipulasi-dom.html)
 - [Tugas 9: Website Pendaftaran Siswa Baru dengan PHP dan MySQL](https://pweb-9.000webhostapp.com)
   - [Blog post](https://farfnd.blogspot.com/2021/12/tugas-9-pemrograman-web-website.html)
+- [Tugas 10: Menggunggah Gambar dengan PHP dan MySQL](http://pweb-10.rf.gd/)
+  - [Blog post](https://farfnd.blogspot.com/2021/12/tugas-10-pemrograman-web-menggunggah.html)
