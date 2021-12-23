@@ -2,11 +2,12 @@
 
 include("../config.php");
 
-if (!file_exists('images')) {
-    mkdir('images', 0777, true);
-}
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
+header("Access-Control-Allow-Methods: *");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $id = str_replace("'", "\'", $_POST['id']);
     $nama = str_replace("'", "\'", $_POST['nama']);
     $tempat_lahir = str_replace("'", "\'", $_POST['tempat_lahir']);
     $tanggal_lahir = str_replace("'", "\'", $_POST['tanggal_lahir']);
@@ -18,35 +19,31 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $mapel = str_replace("'", "\'", $_POST['mapel']);
     $alamat = str_replace("'", "\'", $_POST['alamat']);
     $foto = "";
-
-    if(isset($_FILES['foto']['name'])){
-
+    
+    if(!empty($_FILES['foto']['name'])){
         if($_FILES['foto']['size'] > 3*1048576) { //3 MB (size is also in bytes)
             die(json_encode([
                 "error" => 500,
-                "status" => "File is too large (> 3 MB)"
+                "status" => "File too large (> 3 MB)"
             ]));
             exit;
         }
-
-        /* Getting file name */
+        
         $filename = $_FILES['foto']['name'];
         
-        /* Location */
         $location = "../images/".$filename;
         $imageFileType = pathinfo($location,PATHINFO_EXTENSION);
         $imageFileType = strtolower($imageFileType);
         $imageNewFileName = md5(time()).'.'.$imageFileType;
         $location = "../images/".$imageNewFileName;
 
-        /* Valid extensions */
         $valid_extensions = array("jpg","jpeg","png");
      
         $response = 0;
         /* Check file extension */
         if(in_array(strtolower($imageFileType), $valid_extensions)) {
            /* Upload file */
-           if(move_uploaded_file($_FILES['foto']['tmp_name'], $location)){
+           if(move_uploaded_file($_FILES['foto']['tmp_name'],$location)){
               $response = $location;
               $foto = $imageNewFileName;
            }
@@ -56,13 +53,32 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 "status" => "Invalid file type"
             ]));
             exit;
-        }     
+        }   
+        
+        $sql = "SELECT * FROM users WHERE id=$id AND role='guru'";
+        $query = mysqli_query($db, $sql);
+
+        $old_foto = "";
+        while ($guru = mysqli_fetch_array($query)) {
+            $old_foto = $guru["foto"];
+            break;
+        }
+        
+        if($old_foto && file_exists($old_foto)){
+            unlink($old_foto);
+        }
+
+        $sql = "UPDATE users
+                SET id=$id, nama='$nama', tempat_lahir='$tempat_lahir', tanggal_lahir='$tanggal_lahir', kode_guru='$kode_guru', jenis_kelamin='$jenis_kelamin', agama='$agama', kelas='$kelas', mapel='$mapel', alamat='$alamat', foto='$foto'
+                WHERE id=$id";
+    } else {
+        $sql = "UPDATE users
+                SET id=$id, nama='$nama', tempat_lahir='$tempat_lahir', tanggal_lahir='$tanggal_lahir', kode_guru='$kode_guru', jenis_kelamin='$jenis_kelamin', agama='$agama', kelas='$kelas', mapel='$mapel', alamat='$alamat'
+                WHERE id=$id";
     }
 
-    $sql = "INSERT INTO users (id, nama, tempat_lahir, tanggal_lahir, kode_guru, jenis_kelamin, agama, kelas, mapel, alamat, foto, role)
-            VALUE ($id, '$nama', '$tempat_lahir', '$tanggal_lahir', '$kode_guru', '$jenis_kelamin', '$agama', '$kelas', '$mapel', '$alamat', '$foto', 'guru)";
     $query = mysqli_query($db, $sql);
-
+    
     if ($query) {
         die(json_encode([
             "error" => 0,
@@ -71,7 +87,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     } else {
         die(json_encode([
             "error" => 500,
-            "status" => "Internal Server Error"
+            "status" => "Internal Server Error",
+            "message" => mysqli_error($db)
         ]));
     }
 }else{
